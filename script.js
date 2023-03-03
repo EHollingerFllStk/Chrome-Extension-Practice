@@ -43,12 +43,12 @@
 
 // log out the items in the myLeads array using a for loop
 
-let myLeads = [];
-const inputEl = document.getElementById("input-el");
-let inputBtn = document.getElementById("input-btn");
-// 2. Grab the unordered list and store it in a const variable caled ulEl
-const ulEl = document.getElementById("ul-el");
-//console.log(ulEl)
+// let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"];
+// const inputEl = document.getElementById("input-el");
+// let inputBtn = document.getElementById("input-btn");
+// // 2. Grab the unordered list and store it in a const variable caled ulEl
+// const ulEl = document.getElementById("ul-el");
+// //console.log(ulEl)
 
 // inputBtn.addEventListener("click", function() {
 //   myLeads.push(inputEl.value)
@@ -65,12 +65,52 @@ const ulEl = document.getElementById("ul-el");
 
 //Per's solution:
 
+// inputBtn.addEventListener("click", function() {
+//   myLeads.push(inputEl.value)
+//   console.log(myLeads)
+// })
+
+
+// for (i = 0; i < myLeads.length; i++) {
+//   ulEl.textContent += "<li>" + myLeads[i] + "</li>"
+// }
+
+// It will list items out like this: 
+//  <li>www.awesomelead.com</li><li>www.epiclead.com</li><li>www.greatlead.com</li>
+//  Change ulEl.textContent to ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+
+// let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"];
+// const inputEl = document.getElementById("input-el");
+// let inputBtn = document.getElementById("input-btn");
+// const ulEl = document.getElementById("ul-el");
+
+// inputBtn.addEventListener("click", function() {
+//   myLeads.push(inputEl.value)
+//   console.log(myLeads)
+// })
+
+// Using create element and append
+// for (i = 0; i < myLeads.length; i++) {
+//   //ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+//   //create element
+//   const li = document.createElement("li")
+//   //set text content
+//   li.textContent = myLeads[i]
+//   //append to ul
+//   ulEl.append(li)
+// }
+
+
+let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"];
+const inputEl = document.getElementById("input-el");
+let inputBtn = document.getElementById("input-btn");
+const ulEl = document.getElementById("ul-el");
+
 inputBtn.addEventListener("click", function() {
   myLeads.push(inputEl.value)
   console.log(myLeads)
 })
 
 for (i = 0; i < myLeads.length; i++) {
-  ulEl.textContent += myLeads[i] + " "
+  ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
 }
-
