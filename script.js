@@ -108,9 +108,22 @@ const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function() {
   myLeads.push(inputEl.value)
-  console.log(myLeads)
+  //console.log(myLeads)
 })
 
-for (i = 0; i < myLeads.length; i++) {
-  ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
+
+//1. create a variable listItems, to hold all the HTML for the list items
+// Assign it to and empty string to begin with
+let listItems = ""
+
+for (i = 0; i < myLeads.length; i++){
+  let item = document.createElement("li"); 
+  
+  // 2. Add the item to the listItems variable instead of the ulEl.innerHTML
+  listItems += "<li>" + myLeads[i] + "</li>"
+   console.log(listItems)
 }
+// Render the listItems inside theunordered list using ulEl.innerHTML
+ulEl.innerHTML = listItems
+
+//render for loops on the DOM has a cost. Is it better to have to render the HTML each time in the for loop or once outside the for loop.
