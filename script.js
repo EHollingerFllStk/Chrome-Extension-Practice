@@ -182,12 +182,12 @@ function renderLeads() {
   ulEl.innerHTML = listItems
 }
 //////TEMPLATE STRINGS PRACTICE
-const recipient = "James";
-const sender = "Jonny"
-const email =
-`Hey ${recipient}! 
-  
-  How is it going? 
-  
-  Cheers ${sender}`
-console.log(email)
+// const recipient = "James";
+// const sender = "Jonny"
+// const email =
+// `Hey ${recipient}! 
+
+//   How is it going? 
+
+//   Cheers ${sender}`
+// console.log(email)
