@@ -138,26 +138,26 @@ inputBtn.addEventListener("click", function() {
   //2. call the renderLeads() function
   inputEl.value = "";
   renderLeads();
-   // 3. clear out the input field
+  // 3. clear out the input field
   //clearInput();
   //Per solution: 
-  
+
 })
 
 // 1. Wrap the cocde below in a renderLeads() function
-function renderLeads() {
-  let listItems = ""
+// function renderLeads() {
+//   let listItems = ""
 
-  for (i = 0; i < myLeads.length; i++) {
-    let item = document.createElement("li");
+//   for (i = 0; i < myLeads.length; i++) {
+//     let item = document.createElement("li");
 
-    // 2. Add the item to the listItems variable instead of the ulEl.innerHTML
-    listItems += "<li><a target='_blank' href=' " + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
-    console.log(listItems)
-  }
-  // Render the listItems inside theunordered list using ulEl.innerHTML
-  ulEl.innerHTML = listItems
-}
+//     // 2. Add the item to the listItems variable instead of the ulEl.innerHTML
+//     listItems += "<li><a target='_blank' href=' " + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+//     console.log(listItems)
+//   }
+//   // Render the listItems inside theunordered list using ulEl.innerHTML
+//   ulEl.innerHTML = listItems
+// }
 // function clearInput() {
 //   let getValue = document.getElementById("input-el");
 //     if(getValue.value != "") {
@@ -165,3 +165,29 @@ function renderLeads() {
 //     }
 // }
 
+
+///////////USING TEMPLATE STRINGS/////////////////
+function renderLeads() {
+  let listItems = ""
+  for (i = 0; i < myLeads.length; i++) {
+    let item = document.createElement("li");
+    // listItems += "<li><a target='_blank' href=' " + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+    listItems += `
+      <li>
+        <a target='_blank' href='${myLeads[i]}'> 
+          ${myLeads[i]} 
+        </a>
+      </li>`
+  }
+  ulEl.innerHTML = listItems
+}
+//////TEMPLATE STRINGS PRACTICE
+const recipient = "James";
+const sender = "Jonny"
+const email =
+`Hey ${recipient}! 
+  
+  How is it going? 
+  
+  Cheers ${sender}`
+console.log(email)
